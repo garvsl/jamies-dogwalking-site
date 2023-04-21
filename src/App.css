@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Loading images Component */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loadingImgCover {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transform-origin: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.loadingImgCover .loadingImg:nth-child(1) {
+  position: absolute;
+  width: 400px;
+  left: 16%;
+  bottom: 14%;
 }
 
-.App-link {
-  color: #61dafb;
+.loadingImgCover .loadingImg:nth-child(2) {
+  position: absolute;
+  width: 800px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loadingImgCover .loadingImg:nth-child(3) {
+  position: absolute;
+  width: 300px;
+  right: 12%;
+  top: 8%;
+}
+.loadingImgCover .loadingImg:nth-child(4) {
+  position: absolute;
+  max-width: 400px;
+  width: 40%;
+  right: 20%;
+  bottom: 10%;
+}
+.loadingImgCover .loadingImg:nth-child(5) {
+  position: absolute;
+  width: 280px;
+  left: 14%;
+  top: 12%;
+}
+img {
+  width: 100%;
+  object-fit: fill;
+  border-radius: 15px;
 }
