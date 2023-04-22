@@ -8,11 +8,27 @@ body {
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  /* background-color: #2b2b2b; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@font-face {
+  font-family: "ExonOutline";
+  src: url("./fonts/ExonOutline-4BWx4.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "ExonRegular";
+  src: url("./fonts/ExonRegular-0WjEd.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "deVenci";
+  src: url("./fonts/deVenci.otf") format("opentype");
 }
 
 /* Loading images Component */
@@ -58,7 +74,59 @@ code {
   top: 12%;
 }
 img {
-  width: 100%;
   object-fit: fill;
   border-radius: 15px;
+}
+
+/* Homepage */
+
+.mainImg {
+  position: absolute;
+  width: 100%;
+
+  top: -200px;
+}
+
+/* navbar */
+
+.navbar {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  border-bottom: 1px double black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  user-select: none;
+  cursor: pointer;
+}
+
+.navbar h1 {
+  font-family: "ExonRegular";
+  letter-spacing: -1px;
+  font-size: 4rem;
+}
+
+.navbar ul {
+  user-select: none;
+  height: 100%;
+  align-items: center;
+  margin-right: 15px;
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  font-family: "ExonRegular";
+  font-size: 2rem;
+}
+
+.navbar ul li {
+  cursor: pointer;
 }
