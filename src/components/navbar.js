@@ -2,14 +2,13 @@ import { motion } from "framer-motion";
 import dogImgLogo from "../images/Screenshot from 2023-04-21 20-33-09.png";
 
 const pathVariants = {
-  hidden: { opacity: 0, y: -200 },
+  hidden: { opacity: 0, y: -100 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       ease: "easeInOut",
-      duration: 1.55,
-      type: "spring",
+      duration: 1.4,
     },
   },
 };

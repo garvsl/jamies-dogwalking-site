@@ -16,6 +16,11 @@ code {
     monospace;
 }
 
+* {
+  cursor: none;
+  /* pointer-events: none; */
+}
+
 @font-face {
   font-family: "ExonOutline";
   src: url("./fonts/ExonOutline-4BWx4.otf") format("opentype");
@@ -83,19 +88,26 @@ img {
 .mainImg {
   position: absolute;
   width: 100%;
-
-  top: -200px;
+  border-radius: 0;
+  height: 100%;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: 20% center;
 }
 
 /* navbar */
 
 .navbar {
-  position: absolute;
+  position: sticky;
   z-index: 100;
   top: 0;
   width: 100%;
   height: 75px;
-  border-bottom: 1px double black;
+  /* border-bottom: 1px double black; */
+  /* background-color: white; */
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -106,7 +118,18 @@ img {
   align-items: center;
   height: 100%;
   user-select: none;
-  cursor: pointer;
+}
+
+/* .logoText svg {
+  transition: 0.25s ease-in-out;
+} */
+/* 
+.logoText:hover svg {
+  transform: rotate(30deg);
+} */
+
+.logoText h1 {
+  margin-left: -12px;
 }
 
 .navbar h1 {
@@ -122,11 +145,24 @@ img {
   margin-right: 15px;
   display: flex;
   list-style: none;
-  gap: 15px;
+  gap: 25px;
   font-family: "ExonRegular";
   font-size: 2rem;
 }
 
 .navbar ul li {
-  cursor: pointer;
+}
+
+.cursor {
+  background-color: #111;
+  pointer-events: none;
+  overflow: hidden;
+  cursor: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 300;
 }

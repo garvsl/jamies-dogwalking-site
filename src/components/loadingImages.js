@@ -46,7 +46,6 @@ const mainImg = {
   },
   exit: {
     opacity: 0,
-    y: -200,
     transition: {
       ease: "easeInOut",
       duration: 0.8,
