@@ -44,6 +44,14 @@ const mainImg = {
       duration: 1.6,
     },
   },
+  exit: {
+    opacity: 0,
+    y: -200,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.8,
+    },
+  },
 };
 
 export default function ImageCollection({ setImagesLoading }) {
@@ -67,6 +75,7 @@ export default function ImageCollection({ setImagesLoading }) {
         src={dogCat}
         className="loadingImg"
         alt="A brown and white dog, lovingly laying together with a greyish cat"
+        layoutId="mainImg"
       ></motion.img>
       <motion.img
         variants={staggerAnimations}
