@@ -39,7 +39,7 @@ export default function Cursor() {
   const variants = {
     initial: {
       transform: "translate(-50%, -50%) scale(1)",
-      backgroundColor: "black",
+      //   backgroundColor: "black",
     },
     animate: {
       transform: "translate(-50%, -50%) scale(0.45)",
