@@ -307,28 +307,33 @@ img {
 /* carousel */
 
 .carouselCover {
+  display: flex;
+  align-items: center;
   height: 100vh;
   background-color: whitesmoke;
-}
+  /* overflow-x: scroll; */
 
-.carouselCover button {
-  width: 200px;
-  height: 200px;
-  background-color: red;
-}
-
-.carouselCover button:hover {
-  background-color: red;
+  overflow: hidden;
 }
 
 .imgCover {
-  background-color: #111;
-  height: 400px;
-  width: 400px;
+  display: flex;
+  /* flex-wrap: wrap; */
 }
 
-.imgCover img {
+.individualImg {
+  /* position: absolute; */
+  min-height: 40rem;
+  min-width: 30rem;
+  cursor: grab;
+  padding: 40px;
+}
+
+.individualImg img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
+
+  pointer-events: none;
+  height: 100%;
+  border-radius: 2rem;
 }
