@@ -23,7 +23,6 @@ export default function ScrollDown() {
         }}
         className="scrollDown"
       >
-        {/* <h4>scroll Down</h4> */}
         <motion.svg
           animate={{
             y: [0, -8, 0],
@@ -34,7 +33,6 @@ export default function ScrollDown() {
             },
           }}
           xmlns="http://www.w3.org/2000/svg"
-          // xml:space="preserve"
           color="white"
           width="800"
           height="800"
