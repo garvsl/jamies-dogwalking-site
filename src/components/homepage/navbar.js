@@ -1,24 +1,41 @@
-import { motion } from "framer-motion";
-import dogImgLogo from "../images/Screenshot from 2023-04-21 20-33-09.png";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState } from "react";
 
 const pathVariants = {
-  hidden: { opacity: 0, y: -100 },
+  hidden: { opacity: 0, y: -100, backgroundColor: "transparent" },
   visible: {
     opacity: 1,
     y: 0,
+    backgroundColor: "transparent",
     transition: {
       ease: "easeInOut",
       duration: 1.4,
     },
   },
+  secondvisible: {
+    backgroundColor: "white",
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1, ease: "easeInOut" },
+  },
 };
 
 export default function Navbar() {
+  const { scrollY } = useScroll();
+  const [shouldChangeColor, setShouldChangeColor] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 0) {
+      setShouldChangeColor(true);
+    } else {
+      setShouldChangeColor(false);
+    }
+  });
   return (
     <motion.div
       variants={pathVariants}
       initial="hidden"
-      animate="visible"
+      animate={shouldChangeColor ? "secondvisible" : "visible"}
       className="navbar"
     >
       <div className="logoText">

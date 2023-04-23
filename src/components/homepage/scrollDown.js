@@ -30,7 +30,7 @@ export default function ScrollDown() {
             transition: {
               ease: "easeInOut",
               duration: 1,
-              repeat: Infinity, // repeat the
+              repeat: Infinity,
             },
           }}
           xmlns="http://www.w3.org/2000/svg"

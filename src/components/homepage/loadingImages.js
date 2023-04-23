@@ -1,8 +1,8 @@
-import dogCat from "../images/3348095-dog-cat-1440.jpg";
-import dogLick from "../images/2023-02-165.jpg";
-import dogGolden from "../images/2E8004BF-5356-4D80-A2F2-35A3FA4C5156.jpeg";
-import dogDistanced from "../images/2023-02-167.jpg";
-import dogUpside from "../images/2023-02-16.jpg";
+import dogCat from "../../images/3348095-dog-cat-1440.jpg";
+import dogLick from "../../images/2023-02-165.jpg";
+import dogGolden from "../../images/2E8004BF-5356-4D80-A2F2-35A3FA4C5156.jpeg";
+import dogDistanced from "../../images/2023-02-167.jpg";
+import dogUpside from "../../images/2023-02-16.jpg";
 import { motion } from "framer-motion";
 
 const staggerChildren = {
