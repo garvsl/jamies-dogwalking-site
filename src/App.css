@@ -8,7 +8,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   /* background-color: #2b2b2b; */
 }
 
@@ -18,7 +19,8 @@ code {
 }
 
 * {
-  cursor: none;
+  /* cursor: none; */
+
   /* pointer-events: none; */
 }
 
@@ -36,6 +38,92 @@ code {
   font-family: "deVenci";
   src: url("./fonts/deVenci.otf") format("opentype");
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto&display=swap");
+
+/* cursor */
+.cursor {
+  background-color: #111;
+  /* pointer-events: none; */
+  /* overflow: hidden; */
+  cursor: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 300;
+}
+
+/* navbar */
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbarColor {
+  position: absolute;
+  pointer-events: none;
+  background-color: white;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  user-select: none;
+  transition: 0.25s ease-in-out;
+}
+
+.logoText h1 {
+  margin-left: -12px;
+}
+
+.navbar h1 {
+  font-family: "ExonRegular";
+  letter-spacing: -1px;
+  font-size: 4rem;
+}
+
+.navbar ul {
+  user-select: none;
+  height: 100%;
+  align-items: center;
+  margin-right: 15px;
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  font-family: "ExonRegular";
+  /* font-weight: 800; */
+  font-size: 2rem;
+}
+
+.navbar ul li {
+  transition: 0.25s ease-in-out;
+}
+
+.navbar ul li:hover,
+.logoText:hover {
+  color: whitesmoke;
+  fill: whitesmoke;
+}
+/* 
+.logoText svg {
+  color: white;
+  fill: white;
+} */
 
 /* Loading images Component */
 
@@ -87,7 +175,7 @@ img {
 /* Homepage */
 
 .mainImg {
-  position: absolute;
+  position: relative;
   width: 100%;
   border-radius: 0;
   height: 100%;
@@ -99,10 +187,9 @@ img {
 }
 
 .mainCover {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: flex;
-
   align-items: center;
   justify-content: center;
 }
@@ -118,14 +205,16 @@ img {
   letter-spacing: -3px;
   width: fit-content;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
+  align-self: center;
+  justify-self: center;
 }
 
 .mainTitleWrap {
-  display: flex;
-  flex-wrap: wrap;
+  position: absolute;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
   width: 100%;
 }
 
@@ -143,7 +232,6 @@ img {
   display: flex;
   flex-direction: column;
   position: absolute;
-  z-index: 100;
   justify-content: center;
   align-items: center;
   font-family: "ExonRegular";
@@ -169,61 +257,78 @@ img {
   width: 75px;
 }
 
-/* navbar */
+/* about */
 
-.navbar {
-  position: sticky;
-  z-index: 100;
-  top: 0;
+.aboutCover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
   width: 100%;
-  height: 75px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logoText {
-  display: flex;
-  align-items: center;
-  height: 100%;
   user-select: none;
+  background-color: whitesmoke;
 }
 
-.logoText h1 {
-  margin-left: -12px;
-}
-
-.navbar h1 {
+.aboutCover h1 {
   font-family: "ExonRegular";
-  letter-spacing: -1px;
-  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 5px;
 }
 
-.navbar ul {
-  user-select: none;
-  height: 100%;
-  align-items: center;
-  margin-right: 15px;
+.infoCover {
+  border-radius: 25px;
+  padding: 3%;
   display: flex;
-  list-style: none;
-  gap: 25px;
-  font-family: "ExonRegular";
-  /* font-weight: 800; */
-  font-size: 2rem;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 70%;
+  max-width: 700px;
+  max-height: 600px;
+  border: 1px solid black;
+  background-color: #1a1919;
+  color: white;
+  /* justify-content: space-between; */
 }
 
-/* cursor */
-.cursor {
+.infoCover p {
+  font-family: "Open Sans", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.infoCover img {
+  width: 50%;
+  object-fit: cover;
+}
+
+/* carousel */
+
+.carouselCover {
+  height: 100vh;
+  background-color: whitesmoke;
+}
+
+.carouselCover button {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+.carouselCover button:hover {
+  background-color: red;
+}
+
+.imgCover {
   background-color: #111;
-  pointer-events: none;
-  overflow: hidden;
-  cursor: none;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 300;
+  height: 400px;
+  width: 400px;
+}
+
+.imgCover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

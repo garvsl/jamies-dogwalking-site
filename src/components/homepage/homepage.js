@@ -1,14 +1,24 @@
-import dogCat from "../../images/3348095-dog-cat-1440.jpg";
+import dogCat from "../../mainImg/3348095-dog-cat-1440.jpg";
 import { motion } from "framer-motion";
 import Navbar from "./navbar";
-import Cursor from "../cursor";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import LetterAnimation from "./letterAnimation";
 import ScrollDown from "./scrollDown";
+import dogWalk from "../../images/2023-02-165.jpg";
+import Carousel from "./carousel";
+import Kursor from "kursor";
 
 export default function Homepage() {
   const [showBottomAnimated, setShowBottomAnimated] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    new Kursor({
+      type: 4,
+      removeDefaultCursor: true,
+      color: "#111",
+    });
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -18,9 +28,9 @@ export default function Homepage() {
       setShowScroll(true);
     }, 3200);
   }, []);
+
   return (
     <>
-      <Cursor />
       <Navbar />
       <div className="mainCover">
         <motion.img
@@ -41,7 +51,20 @@ export default function Homepage() {
           {showBottomAnimated && <LetterAnimation text={"one paw at a time"} />}
         </div>
       </div>
-      <div className="aboutCover"></div>
+      <div className="aboutCover">
+        <h1>About</h1>
+        <div className="infoCover">
+          <img src={dogWalk} alt="" />
+          <p>
+            I have been walking dog for 10 years. I love all dogs. They have
+            such different personalities and always surprise you. It is really
+            important to talk to the dogs just like people. They understand more
+            than you think. I try to walk them in different areas around the
+            neighborhood so it isn't so boring for them.
+          </p>
+        </div>
+      </div>
+      <Carousel />
     </>
   );
 }
