@@ -7,6 +7,7 @@ import ScrollDown from "./scrollDown";
 import dogWalk from "../../images/2023-02-165.jpg";
 import Carousel from "./carousel";
 import Kursor from "kursor";
+import GoogleMaps from "./googleMaps";
 
 export default function Homepage() {
   const [showBottomAnimated, setShowBottomAnimated] = useState(false);
@@ -62,9 +63,11 @@ export default function Homepage() {
             than you think. I try to walk them in different areas around the
             neighborhood so it isn't so boring for them.
           </p>
+          <button>Get a quote</button>
         </div>
       </div>
       <Carousel />
+      <GoogleMaps />
     </>
   );
 }
