@@ -13,14 +13,20 @@ export default function Carousel() {
   }, []);
 
   return (
-    <motion.div ref={carouselCover} className="carouselCover">
+    <motion.div id="Gallery" ref={carouselCover} className="carouselCover">
+      <h1>Gallery</h1>
       <motion.div
         drag="x"
         dragConstraints={{ right: 0, left: -width }}
         className="imgCover"
       >
         {imagesArray.map((image) => (
-          <motion.div className="individualImg" key={image}>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ ease: "easeInOut", type: "spring" }}
+            className="individualImg"
+            key={image}
+          >
             <img src={image} alt="" />
           </motion.div>
         ))}

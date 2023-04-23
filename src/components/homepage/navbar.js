@@ -55,7 +55,7 @@ export default function Navbar() {
         animate={shouldChangeColor ? "animate" : "initial"}
         className="navbarColor"
       />
-      <div className="logoText">
+      <a href="#Main" className="logoText">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 280.93 268.55"
@@ -67,9 +67,14 @@ export default function Navbar() {
           />
         </svg>
         <h1>Jamies</h1>
-      </div>
+      </a>
       <ul>
-        <li>About</li>
+        <li>
+          <a href="#About">About</a>
+        </li>
+        <li>
+          <a href="#Gallery">Gallery</a>
+        </li>
         <li>Map</li>
         <li>Quote</li>
         <li>Contact</li>

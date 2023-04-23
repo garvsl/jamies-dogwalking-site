@@ -32,7 +32,7 @@ export default function Homepage() {
   return (
     <>
       <Navbar />
-      <div className="mainCover">
+      <div id="Main" className="mainCover">
         <motion.img
           layoutId="mainImg"
           layout
@@ -51,7 +51,7 @@ export default function Homepage() {
           {showBottomAnimated && <LetterAnimation text={"one paw at a time"} />}
         </div>
       </div>
-      <div className="aboutCover">
+      <div id="About" className="aboutCover">
         <h1>About</h1>
         <div className="infoCover">
           <img src={dogWalk} alt="" />
