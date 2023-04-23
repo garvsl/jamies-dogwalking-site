@@ -44,13 +44,6 @@ const mainImg = {
       duration: 1.6,
     },
   },
-  exit: {
-    opacity: 0,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.8,
-    },
-  },
 };
 
 export default function ImageCollection({ setImagesLoading }) {
@@ -73,8 +66,9 @@ export default function ImageCollection({ setImagesLoading }) {
         variants={mainImg}
         src={dogCat}
         className="loadingImg"
-        alt="A brown and white dog, lovingly laying together with a greyish cat"
+        alt="A golden dog peering over a mountain, and glaring at a vast land where another mountain is seemingly experiencing an avalanche"
         layoutId="mainImg"
+        layout
       ></motion.img>
       <motion.img
         variants={staggerAnimations}
