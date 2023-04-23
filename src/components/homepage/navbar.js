@@ -72,12 +72,15 @@ export default function Navbar() {
         <li>
           <a href="#About">About</a>
         </li>
+        <li>Quote</li>
         <li>
           <a href="#Gallery">Gallery</a>
         </li>
-        <li>Map</li>
-        <li>Quote</li>
+
         <li>Contact</li>
+        <li>
+          <a href="#Map">Map</a>
+        </li>
       </ul>
     </motion.div>
   );
