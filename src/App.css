@@ -350,3 +350,26 @@ a:hover {
   height: 100%;
   border-radius: 2rem;
 }
+
+/* contact */
+
+.contactWrap {
+  height: 100vh;
+  width: 100%;
+  background-color: whitesmoke;
+}
+
+/* footer */
+
+.footerWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+}
+
+.footerWrap h1 {
+  font-family: "ExonRegular";
+  font-weight: 800;
+}

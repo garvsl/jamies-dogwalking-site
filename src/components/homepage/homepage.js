@@ -8,6 +8,8 @@ import dogWalk from "../../images/2023-02-165.jpg";
 import Carousel from "./carousel";
 import Kursor from "kursor";
 import GoogleMaps from "./googleMaps";
+import Contact from "./contact";
+import Footer from "./footer";
 
 export default function Homepage() {
   const [showBottomAnimated, setShowBottomAnimated] = useState(false);
@@ -57,17 +59,28 @@ export default function Homepage() {
         <div className="infoCover">
           <img src={dogWalk} alt="" />
           <p>
-            I have been walking dog for 10 years. I love all dogs. They have
-            such different personalities and always surprise you. It is really
-            important to talk to the dogs just like people. They understand more
-            than you think. I try to walk them in different areas around the
-            neighborhood so it isn't so boring for them.
+            I have been walking dogs for <b>10 years</b>. I{" "}
+            <span style={{ color: "pink" }}>
+              <b>love</b>
+            </span>{" "}
+            all dogs. They have such different personalities and always{" "}
+            <span style={{ color: "greenyellow" }}>
+              <b>surprise</b>
+            </span>{" "}
+            you. It is really important to talk to the dogs just like people.
+            They{" "}
+            <span style={{ color: "blueviolet" }}>
+              <b>understand</b>
+            </span>{" "}
+            more than you think.
           </p>
           <button>Get a quote</button>
         </div>
       </div>
       <Carousel />
+      <Contact />
       <GoogleMaps />
+      <Footer />
     </>
   );
 }
