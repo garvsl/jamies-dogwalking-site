@@ -1,7 +1,7 @@
 import dogCat from "../../mainImg/3348095-dog-cat-1440.jpg";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "./navbar";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import LetterAnimation from "./letterAnimation";
 import ScrollDown from "./scrollDown";
 import dogWalk from "../../images/2023-02-165.jpg";
@@ -14,6 +14,10 @@ import Footer from "./footer";
 export default function Homepage() {
   const [showBottomAnimated, setShowBottomAnimated] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
+  let { scrollYProgress } = useScroll();
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  //if scree nis less than 400 px then remove kursor
 
   useEffect(() => {
     new Kursor({
@@ -37,6 +41,7 @@ export default function Homepage() {
       <Navbar />
       <div id="Main" className="mainCover">
         <motion.img
+          style={{ y }}
           layoutId="mainImg"
           layout
           transition={{
@@ -78,8 +83,8 @@ export default function Homepage() {
         </div>
       </div>
       <Carousel />
-      <Contact />
       <GoogleMaps />
+      {/* <Contact /> */}
       <Footer />
     </>
   );
