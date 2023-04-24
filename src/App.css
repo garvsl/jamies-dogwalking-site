@@ -574,18 +574,38 @@ form button:hover {
   display: flex;
   width: 200px;
   flex-direction: column;
+  background-color: #1a1919;
+  color: white;
+  padding-bottom: 10px;
   align-items: center;
+  border-radius: 2rem;
   border: 1px solid black;
 }
 
+.hoursWrap::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: 10px;
+  transform: rotate(45deg);
+  width: 40px;
+  z-index: -1;
+  height: 40px;
+  background-color: #1a1919;
+  border-radius: 5px;
+}
+
 .hoursWrap button {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  padding: 5px;
+  border: none;
   border-radius: 2rem;
   background-color: white;
 }
 
 .hourDay {
   display: flex;
+  gap: 3px;
 }
 
 .hoursWrap h1 {
@@ -598,6 +618,12 @@ form button:hover {
   padding: 0;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
+}
+
+.hoursWrap h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  margin-top: -5px;
 }
 
 /* footer */
@@ -618,6 +644,10 @@ form button:hover {
 
 @media screen and (max-width: 900px) {
   .logoText h1 {
+    display: none;
+  }
+
+  .kursor {
     display: none;
   }
 

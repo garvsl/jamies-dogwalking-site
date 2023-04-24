@@ -4,7 +4,7 @@ import {
   useMotionValueEvent,
   AnimatePresence,
 } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Contact from "./contact";
 import OpenHours from "./open";
 
@@ -44,6 +44,7 @@ export default function Navbar() {
   const [shouldChangeColor, setShouldChangeColor] = useState(false);
   const [displayContact, setDisplayContact] = useState(false);
   const [displayHours, setDisplayHours] = useState(false);
+  const [storeStatus, setStoreStatus] = useState("closed");
 
   const handleContactClick = () => {
     setDisplayContact(!displayContact);
@@ -51,7 +52,46 @@ export default function Navbar() {
 
   const handleHoursClick = () => {
     setDisplayHours(!displayHours);
+    const currentDayOfWeek = new Date().getDay();
+    const currentHour = new Date().getHours();
+
+    const businessHours = {
+      Mon: { open: 8, close: 20 },
+      Tue: { open: 8, close: 20 },
+      Wed: { open: 8, close: 20 },
+      Thu: { open: 8, close: 20 },
+      Fri: { open: 8, close: 20 },
+      Sat: { open: 8, close: 20 },
+      Sun: { open: 8, close: 20 },
+    };
+
+    const todaysBusinessHours =
+      businessHours[Object.keys(businessHours)[currentDayOfWeek - 1]];
+
+    if (
+      todaysBusinessHours &&
+      currentHour >= todaysBusinessHours.open &&
+      currentHour < todaysBusinessHours.close
+    ) {
+      setStoreStatus("open");
+    }
   };
+
+  const hoursWrap = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (hoursWrap.current && !hoursWrap.current.contains(event.target)) {
+        setDisplayHours(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [hoursWrap]);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 0) {
@@ -128,12 +168,16 @@ export default function Navbar() {
         )}
         {displayHours && (
           <motion.div
+            ref={hoursWrap}
             className="hoursWrap"
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            exit={{ y: -100 }}
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
           >
-            <OpenHours setDisplayHours={(val) => setDisplayHours(val)} />
+            <OpenHours
+              setDisplayHours={(val) => setDisplayHours(val)}
+              storeStatus={storeStatus}
+            />
           </motion.div>
         )}
       </AnimatePresence>
