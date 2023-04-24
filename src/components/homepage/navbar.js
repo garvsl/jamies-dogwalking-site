@@ -50,7 +50,7 @@ export default function Navbar() {
   };
 
   const handleHoursClick = () => {
-    setDisplayHours(!displayContact);
+    setDisplayHours(!displayHours);
   };
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -113,9 +113,9 @@ export default function Navbar() {
       <AnimatePresence>
         {displayContact && (
           <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1.1 }}
-            exit={{ scale: 0 }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1.05, opacity: 1 }}
+            exit={{ scale: 1, opacity: 0 }}
             transition={{
               ease: "easeInOut",
               duration: 0.7,
