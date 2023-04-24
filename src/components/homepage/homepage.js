@@ -15,16 +15,18 @@ export default function Homepage() {
   const [showBottomAnimated, setShowBottomAnimated] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
   let { scrollYProgress } = useScroll();
-  let y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "110%"]);
 
   //if scree nis less than 400 px then remove kursor
 
   useEffect(() => {
-    new Kursor({
-      type: 4,
-      removeDefaultCursor: true,
-      color: "#111",
-    });
+    if (window.innerWidth >= 900) {
+      new Kursor({
+        type: 4,
+        removeDefaultCursor: true,
+        color: "#111",
+      });
+    }
   }, []);
 
   useEffect(() => {
@@ -41,9 +43,11 @@ export default function Homepage() {
       <Navbar />
       <div id="Main" className="mainCover">
         <motion.img
+          // layoutId="mainImg"
+          // layout
           style={{ y }}
-          layoutId="mainImg"
-          layout
+          initial={{ y: -200, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{
             ease: [0.6, 0.01, -0.05, 0.9],
             duration: 1.6,
@@ -84,7 +88,6 @@ export default function Homepage() {
       </div>
       <Carousel />
       <GoogleMaps />
-      {/* <Contact /> */}
       <Footer />
     </>
   );

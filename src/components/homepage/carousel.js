@@ -13,7 +13,7 @@ export default function Carousel() {
   }, []);
 
   return (
-    <motion.div id="Gallery" ref={carouselCover} className="carouselCover snap">
+    <motion.div id="Gallery" ref={carouselCover} className="carouselCover">
       <h1>Gallery (Drag)</h1>
       <motion.div
         drag="x"
