@@ -4,6 +4,7 @@ import dogGolden from "../../images/2E8004BF-5356-4D80-A2F2-35A3FA4C5156.jpeg";
 import dogDistanced from "../../images/2023-02-167.jpg";
 import dogUpside from "../../images/2023-02-16.jpg";
 import { motion } from "framer-motion";
+import Kursor from "kursor";
 
 const staggerChildren = {
   show: {
@@ -47,6 +48,12 @@ const mainImg = {
 };
 
 export default function ImageCollection({ setImagesLoading }) {
+  new Kursor({
+    type: 4,
+    removeDefaultCursor: true,
+    color: "#111",
+  });
+
   return (
     <motion.div
       className="loadingImgCover"

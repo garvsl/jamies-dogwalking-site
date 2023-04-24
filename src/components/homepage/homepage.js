@@ -1,12 +1,17 @@
 import dogCat from "../../mainImg/3348095-dog-cat-1440.jpg";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
 import Navbar from "./navbar";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import LetterAnimation from "./letterAnimation";
 import ScrollDown from "./scrollDown";
 import dogWalk from "../../images/2023-02-165.jpg";
 import Carousel from "./carousel";
-import Kursor from "kursor";
+
 import GoogleMaps from "./googleMaps";
 import Contact from "./contact";
 import Footer from "./footer";
@@ -14,20 +19,16 @@ import Footer from "./footer";
 export default function Homepage() {
   const [showBottomAnimated, setShowBottomAnimated] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
+  const [displayContact, setDisplayContact] = useState(false);
+
   let { scrollYProgress } = useScroll();
-  let y = useTransform(scrollYProgress, [0, 1], ["0%", "110%"]);
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "90%"]);
 
   //if scree nis less than 400 px then remove kursor
 
-  useEffect(() => {
-    if (window.innerWidth >= 900) {
-      new Kursor({
-        type: 4,
-        removeDefaultCursor: true,
-        color: "#111",
-      });
-    }
-  }, []);
+  const handleContactClick = () => {
+    setDisplayContact(!displayContact);
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,6 +42,23 @@ export default function Homepage() {
   return (
     <>
       <Navbar />
+      <AnimatePresence>
+        {displayContact && (
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1.05, opacity: 1 }}
+            exit={{ scale: 1, opacity: 0 }}
+            transition={{
+              ease: "easeInOut",
+              duration: 0.7,
+              type: "spring",
+            }}
+            className="contactWrap"
+          >
+            <Contact setDisplayContact={(val) => setDisplayContact(val)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div id="Main" className="mainCover">
         <motion.img
           // layoutId="mainImg"
@@ -83,9 +101,10 @@ export default function Homepage() {
             </span>{" "}
             more than you think.
           </p>
-          <button>Get a quote</button>
+          <button onClick={handleContactClick}>Get a quote</button>
         </div>
       </div>
+
       <Carousel />
       <GoogleMaps />
       <Footer />
