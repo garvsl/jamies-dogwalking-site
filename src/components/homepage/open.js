@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-
-export default function OpenHours({ setDisplayHours, storeStatus }) {
+export default function OpenHours({ storeStatus }) {
   return (
     <>
       <div className="hourDay">

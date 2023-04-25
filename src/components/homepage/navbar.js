@@ -45,6 +45,16 @@ export default function Navbar() {
   const [displayContact, setDisplayContact] = useState(false);
   const [displayHours, setDisplayHours] = useState(false);
   const [storeStatus, setStoreStatus] = useState("closed");
+  const [hamburgerClass, setHamburgerClass] = useState("hamburger");
+  const [showHamburgMenu, setShowHamburgMenu] = useState(false);
+
+  const handleHamburger = () => {
+    setHamburgerClass(
+      hamburgerClass === "hamburger" ? "hamburger active" : "hamburger"
+    );
+
+    setShowHamburgMenu(!showHamburgMenu);
+  };
 
   const handleContactClick = () => {
     setDisplayContact(!displayContact);
@@ -144,11 +154,38 @@ export default function Navbar() {
             Hours
           </li>
         </ul>
-        <div className="hamburger">
+        <div onClick={handleHamburger} className={hamburgerClass}>
           <span></span>
           <span></span>
           <span></span>
         </div>
+        <AnimatePresence>
+          {showHamburgMenu && (
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 100, opacity: 0 }}
+              transition={{ ease: "easeInOut", duration: 0.5 }}
+              className="hamburgMenu"
+            >
+              <li>
+                <a href="#About">About</a>
+              </li>
+              <li>
+                <a href="#Gallery">Gallery</a>
+              </li>
+              <li>
+                <a href="#Map">Map</a>
+              </li>
+              <li onClick={handleContactClick} className="noLink">
+                Quote
+              </li>
+              <li onClick={handleHoursClick} className="noLink">
+                Hours
+              </li>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
       <AnimatePresence>
         {displayContact && (
@@ -174,10 +211,7 @@ export default function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -10, opacity: 0 }}
           >
-            <OpenHours
-              setDisplayHours={(val) => setDisplayHours(val)}
-              storeStatus={storeStatus}
-            />
+            <OpenHours storeStatus={storeStatus} />
           </motion.div>
         )}
       </AnimatePresence>

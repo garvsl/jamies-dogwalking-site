@@ -24,8 +24,6 @@ export default function Homepage() {
   let { scrollYProgress } = useScroll();
   let y = useTransform(scrollYProgress, [0, 1], ["0%", "90%"]);
 
-  //if scree nis less than 400 px then remove kursor
-
   const handleContactClick = () => {
     setDisplayContact(!displayContact);
   };
@@ -81,7 +79,7 @@ export default function Homepage() {
           {showBottomAnimated && <LetterAnimation text={"one paw at a time"} />}
         </div>
       </div>
-      <div id="About" className="aboutCover">
+      <motion.div id="About" className="aboutCover">
         <h1>About</h1>
         <div className="infoCover">
           <img src={dogWalk} alt="" />
@@ -103,7 +101,7 @@ export default function Homepage() {
           </p>
           <button onClick={handleContactClick}>Get a quote</button>
         </div>
-      </div>
+      </motion.div>
 
       <Carousel />
       <GoogleMaps />

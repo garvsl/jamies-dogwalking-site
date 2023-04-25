@@ -48,11 +48,13 @@ const mainImg = {
 };
 
 export default function ImageCollection({ setImagesLoading }) {
-  new Kursor({
-    type: 4,
-    removeDefaultCursor: true,
-    color: "#111",
-  });
+  if (window.innerWidth >= 900) {
+    new Kursor({
+      type: 4,
+      removeDefaultCursor: true,
+      color: "#111",
+    });
+  }
 
   return (
     <motion.div

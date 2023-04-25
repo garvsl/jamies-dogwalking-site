@@ -106,9 +106,13 @@ code {
 }
 
 .hamburger {
+  transition: 0.5s ease-in-out;
   position: absolute;
+  top: 30%;
+  /* transform: translateY(50%); */
   right: 20px;
   display: flex;
+  cursor: pointer;
   flex-direction: column;
   justify-content: space-between;
   height: 20px;
@@ -117,14 +121,58 @@ code {
 }
 
 .hamburger span {
+  transition: 0.25s ease-in-out;
   background-color: black;
   height: 3px;
   width: 100%;
-  /* transition: 0.25s ease-out; */
 }
 
 .hamburger:hover span {
+  background-color: rgb(0, 0, 145);
+  box-shadow: 0px 0px 5px rgba(0, 0, 145, 0.527);
+}
+
+.hamburger.active {
+  transform: rotate(90deg);
+}
+
+.hamburger.active span:nth-child(1) {
+  width: 30px;
+}
+
+.hamburger.active span:nth-child(2) {
+  width: 40px;
+}
+
+.hamburgMenu {
+  top: 0;
+  z-index: -1;
+  right: 0;
+  position: absolute;
+  width: 40%;
+  height: 40vh;
   background-color: white;
+  border-radius: 2rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8vh;
+  justify-content: space-evenly;
+}
+
+.hamburgMenu li {
+  font-family: "ExonRegular";
+  font-weight: 800;
+  font-size: 1.5rem;
+  list-style: none;
+  user-select: none;
+}
+
+.hamburgMenu li:hover {
+  opacity: 0.7;
 }
 
 /* Loading images Component */
@@ -133,6 +181,7 @@ code {
   position: absolute;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   transform-origin: center;
   display: flex;
   align-items: center;
@@ -287,7 +336,8 @@ img {
 .aboutCover button {
   background-color: white;
   width: 40%;
-  height: 20%;
+  height: 10%;
+  margin-top: auto;
   grid-column: 1/-1;
   border-radius: 2rem;
   outline: none;
@@ -307,7 +357,7 @@ img {
   flex-direction: column;
   align-items: center;
   width: 80%;
-  height: 70%;
+  height: 60%;
   max-width: 700px;
   max-height: 600px;
   border: 1px solid black;
@@ -320,7 +370,7 @@ img {
 .infoCover p {
   font-family: "Open Sans", sans-serif;
   /* font-family: "Roboto", sans-serif; */
-  font-size: clamp(0.5rem, 5vw, 1.3rem);
+  font-size: clamp(1rem, 5vw, 1.3rem);
   /* font-size: 1.5rem; */
   letter-spacing: 2px;
 }
@@ -341,7 +391,7 @@ img {
   background-color: whitesmoke;
   /* overflow: hidden; */
   flex-direction: column;
-  width: clamp(30rem, 100%, 100%);
+  width: clamp(20rem, 100%, 100%);
   overflow: hidden;
 }
 
@@ -366,6 +416,7 @@ a:hover {
 }
 
 .noLink {
+  cursor: pointer;
   color: #111;
   transition: 0.25s ease-in-out;
 }
@@ -657,5 +708,18 @@ form button:hover {
 
   .hamburger {
     display: flex;
+  }
+
+  .inputCover {
+    width: 100px;
+  }
+
+  .xButton {
+    right: 4%;
+  }
+
+  .hoursWrap {
+    right: 10%;
+    top: 45vh;
   }
 }
