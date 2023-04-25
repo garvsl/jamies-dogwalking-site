@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/jamies-dogwalking-site/static/css/main.3b8904b4.css",
+    "main.js": "/jamies-dogwalking-site/static/js/main.9980ba77.js",
+    "static/media/3348095-dog-cat-1440.jpg": "/jamies-dogwalking-site/static/media/3348095-dog-cat-1440.1aeb32f3f75fc6372e54.jpg",
+    "static/media/2E8004BF-5356-4D80-A2F2-35A3FA4C5156.jpeg": "/jamies-dogwalking-site/static/media/2E8004BF-5356-4D80-A2F2-35A3FA4C5156.fb156699e8eb76ae7c88.jpeg",
+    "static/media/2023-02-16.jpg": "/jamies-dogwalking-site/static/media/2023-02-16.d5b2d3819d47e55161b1.jpg",
+    "static/media/2023-02-167.jpg": "/jamies-dogwalking-site/static/media/2023-02-167.6c99bbb906d7bd3783d1.jpg",
+    "static/media/2023-02-162.jpg": "/jamies-dogwalking-site/static/media/2023-02-162.c38e85033b350f6012dc.jpg",
+    "static/media/F55D1A80-4858-4336-B792-BD02D154DA9E.jpeg": "/jamies-dogwalking-site/static/media/F55D1A80-4858-4336-B792-BD02D154DA9E.291f4474288093a38be1.jpeg",
+    "static/media/2023-02-161.jpg": "/jamies-dogwalking-site/static/media/2023-02-161.2860bdea438fef4d1363.jpg",
+    "static/media/2023-02-165.jpg": "/jamies-dogwalking-site/static/media/2023-02-165.2a4b3afc16de8272a18c.jpg",
+    "static/media/2023-02-164.jpg": "/jamies-dogwalking-site/static/media/2023-02-164.482a69aa96b37015dc4d.jpg",
+    "static/media/2023-02-163.jpg": "/jamies-dogwalking-site/static/media/2023-02-163.58573df8a358ec6c6961.jpg",
+    "static/media/lf.jpg": "/jamies-dogwalking-site/static/media/lf.7388e4eeb9d0b5327d87.jpg",
+    "static/media/348ss.jpg": "/jamies-dogwalking-site/static/media/348ss.91163172b91de76f20f8.jpg",
+    "static/media/ld.jpg": "/jamies-dogwalking-site/static/media/ld.9d972ad92e0434e355f0.jpg",
+    "static/media/l.jpg": "/jamies-dogwalking-site/static/media/l.883f581564be1ce58375.jpg",
+    "static/media/ExonOutline-4BWx4.otf": "/jamies-dogwalking-site/static/media/ExonOutline-4BWx4.17a748c9e7e8c4b21c1c.otf",
+    "static/media/348s.jpg": "/jamies-dogwalking-site/static/media/348s.742cd093525d7ebf2c14.jpg",
+    "static/media/ExonRegular-0WjEd.otf": "/jamies-dogwalking-site/static/media/ExonRegular-0WjEd.5411868652fea08d88db.otf",
+    "static/media/deVenci.otf": "/jamies-dogwalking-site/static/media/deVenci.cd771d869e129ed5a243.otf",
+    "index.html": "/jamies-dogwalking-site/index.html",
+    "main.3b8904b4.css.map": "/jamies-dogwalking-site/static/css/main.3b8904b4.css.map",
+    "main.9980ba77.js.map": "/jamies-dogwalking-site/static/js/main.9980ba77.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b8904b4.css",
+    "static/js/main.9980ba77.js"
+  ]
+}
