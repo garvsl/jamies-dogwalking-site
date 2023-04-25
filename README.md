@@ -4,6 +4,8 @@ This is is an unofficial webpage for Jamies Dog Walking Site, original: https://
 
 Tools: React, framer-motion, kursor.
 
+LIVE DEMO: https://garvsl.github.io/jamies-dogwalking-site/
+
 # Loading Animation
 
 ![image](https://user-images.githubusercontent.com/39009375/234182663-a26d2921-a035-4d90-890b-7ec7c62817f9.png)
