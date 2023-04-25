@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import imagesArray from "../../images/imagesHandler";
 
 export default function Carousel() {
@@ -11,9 +11,19 @@ export default function Carousel() {
       carouselCover.current.scrollWidth - carouselCover.current.offsetWidth
     );
   }, []);
+  const isInView = useInView(carouselCover, { once: true });
 
   return (
-    <motion.div id="Gallery" ref={carouselCover} className="carouselCover">
+    <motion.div
+      style={{
+        transform: isInView ? "none" : "translateX(-400px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      }}
+      id="Gallery"
+      ref={carouselCover}
+      className="carouselCover"
+    >
       <h1>Gallery (Drag)</h1>
       <motion.div
         drag="x"

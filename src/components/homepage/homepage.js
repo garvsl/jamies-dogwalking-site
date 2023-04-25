@@ -4,6 +4,7 @@ import {
   useScroll,
   useTransform,
   AnimatePresence,
+  useInView,
 } from "framer-motion";
 import Navbar from "./navbar";
 import { useEffect, useState, useRef } from "react";
@@ -36,6 +37,9 @@ export default function Homepage() {
       setShowScroll(true);
     }, 3200);
   }, []);
+
+  const aboutRef = useRef(null);
+  const isInView = useInView(aboutRef, { once: true });
 
   return (
     <>
@@ -81,7 +85,15 @@ export default function Homepage() {
       </div>
       <motion.div id="About" className="aboutCover">
         <h1>About</h1>
-        <div className="infoCover">
+        <div
+          ref={aboutRef}
+          style={{
+            transform: isInView ? "none" : "translateY(-200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+          className="infoCover"
+        >
           <img src={dogWalk} alt="" />
           <p>
             I have been walking dogs for <b>10 years</b>. I{" "}
